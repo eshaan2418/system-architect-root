@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
-type BgTheme = "ocean" | "black";
+type BgTheme = "ocean" | "black" | "mountains";
 
 interface BgThemeContextType {
   theme: BgTheme;
@@ -27,7 +27,8 @@ export const BgThemeProvider = ({ children }: { children: ReactNode }) => {
 
   const toggle = () => {
     setTheme((t) => {
-      const next = t === "ocean" ? "black" : "ocean";
+      const order: BgTheme[] = ["ocean", "mountains", "black"];
+      const next = order[(order.indexOf(t) + 1) % order.length];
       if (next === "black" && videoEl) {
         videoEl.muted = true;
         setAudioPlaying(false);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, Menu, X, Waves, Moon } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X, Waves, Moon, Mountain } from "lucide-react";
 import { useBgTheme } from "@/hooks/useBgTheme";
 
 const navLinks = [
@@ -26,9 +26,9 @@ const Navbar = () => {
             onClick={toggle}
             className="text-muted-foreground hover:text-foreground transition-colors p-1.5 border border-white/10 rounded-sm hover:border-white/30"
             aria-label="Toggle background theme"
-            title={theme === "ocean" ? "Switch to black" : "Switch to ocean"}
+            title={theme === "ocean" ? "Switch to mountains" : theme === "mountains" ? "Switch to black" : "Switch to ocean"}
           >
-            {theme === "ocean" ? <Moon size={14} /> : <Waves size={14} />}
+            {theme === "ocean" ? <Mountain size={14} /> : theme === "mountains" ? <Moon size={14} /> : <Waves size={14} />}
           </button>
         </div>
 
