@@ -1,3 +1,5 @@
+import { useBgTheme } from "@/hooks/useBgTheme";
+
 const experiences = [
   {
     title: "Engineering",
@@ -60,23 +62,27 @@ const experiences = [
     ],
   },
 ];
+
 const ExperienceSection = () => {
+  const { theme } = useBgTheme();
+  const light = theme === "light";
+
   return (
     <section id="experience" className="py-28 px-8 lg:px-16">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-16 tracking-tight">Experience</h2>
+        <h2 className={`text-3xl font-bold mb-16 tracking-tight ${light ? "text-black" : "text-white"}`}>Experience</h2>
         <div className="space-y-4">
           {experiences.map((exp, i) => (
-            <div key={i} className="group border border-white/15 bg-black/30 backdrop-blur-sm p-6 hover:border-white/30 transition-all duration-200 hover:-translate-y-0.5">
+            <div key={i} className={`group border backdrop-blur-sm p-6 transition-all duration-200 hover:-translate-y-0.5 ${light ? "border-black/15 bg-white/50 hover:border-black/30" : "border-white/15 bg-black/30 hover:border-white/30"}`}>
               <div className="flex items-baseline justify-between gap-4">
-                <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                <span className="text-white/50 font-mono text-sm shrink-0">{exp.year}</span>
+                <h3 className={`text-xl font-semibold ${light ? "text-black" : "text-white"}`}>{exp.title}</h3>
+                <span className={`font-mono text-sm shrink-0 ${light ? "text-black/50" : "text-white/50"}`}>{exp.year}</span>
               </div>
-              <p className="text-white/90 font-medium mt-1">{exp.company}</p>
-              <p className="text-white/50 font-mono text-sm mt-1">{exp.location}</p>
+              <p className={`font-medium mt-1 ${light ? "text-black/90" : "text-white/90"}`}>{exp.company}</p>
+              <p className={`font-mono text-sm mt-1 ${light ? "text-black/50" : "text-white/50"}`}>{exp.location}</p>
               <div className="mt-3 space-y-1">
                 {exp.lines.map((line, j) => (
-                  <p key={j} className="text-white/60 text-sm">{line}</p>
+                  <p key={j} className={`text-sm ${light ? "text-black/60" : "text-white/60"}`}>{line}</p>
                 ))}
               </div>
             </div>
