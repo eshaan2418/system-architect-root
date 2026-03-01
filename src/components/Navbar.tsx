@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, Menu, X, Waves, Moon, Volume2, VolumeX } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X, Waves, Moon } from "lucide-react";
 import { useBgTheme } from "@/hooks/useBgTheme";
 
 const navLinks = [
@@ -13,7 +13,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { theme, toggle, audioPlaying, toggleAudio } = useBgTheme();
+  const { theme, toggle } = useBgTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
@@ -30,16 +30,6 @@ const Navbar = () => {
           >
             {theme === "ocean" ? <Moon size={14} /> : <Waves size={14} />}
           </button>
-          {theme === "ocean" && (
-            <button
-              onClick={toggleAudio}
-              className="text-white/50 hover:text-white transition-colors p-1.5 border border-white/10 rounded-sm hover:border-white/30"
-              aria-label={audioPlaying ? "Mute ocean audio" : "Play ocean audio"}
-              title={audioPlaying ? "Mute" : "Play ocean sounds"}
-            >
-              {audioPlaying ? <Volume2 size={14} /> : <VolumeX size={14} />}
-            </button>
-          )}
         </div>
 
         {/* Desktop */}
