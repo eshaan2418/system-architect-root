@@ -13,7 +13,7 @@ const LeadershipSection = () => {
           href="https://awsyorkucloud.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`group block border backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-0.5 ${light ? "border-black/15 bg-white/50 hover:border-black/30" : "border-white/15 bg-black/30 hover:border-white/30"}`}
+          className={`group block border backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-0.5 ${light ? "border-black/10 bg-gray-100/80 hover:border-black/25 shadow-sm" : "border-white/15 bg-black/30 hover:border-white/30"}`}
         >
           <div className="flex items-start justify-between">
             <div>

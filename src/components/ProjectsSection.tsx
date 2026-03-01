@@ -1,4 +1,5 @@
 import { Github } from "lucide-react";
+import { useBgTheme } from "@/hooks/useBgTheme";
 
 const projects = [
   { name: "DistData", desc: "Fault-tolerant distributed database system with consensus and transaction logic.", tech: "C++", url: "https://github.com/eshaan2418/DIstData" },
@@ -20,10 +21,13 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const { theme } = useBgTheme();
+  const light = theme === "light";
+
   return (
     <section id="projects" className="py-28 px-8 lg:px-16">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-16 tracking-tight">Projects</h2>
+        <h2 className={`text-3xl font-bold mb-16 tracking-tight ${light ? "text-black" : "text-white"}`}>Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((p, i) => (
             <a
@@ -31,14 +35,14 @@ const ProjectsSection = () => {
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block border border-white/15 bg-black/30 backdrop-blur-sm p-5 hover:border-white/30 transition-all duration-200 hover:-translate-y-0.5"
+              className={`group block border backdrop-blur-sm p-5 transition-all duration-200 hover:-translate-y-0.5 ${light ? "border-black/10 bg-gray-100/80 hover:border-black/25 shadow-sm" : "border-white/15 bg-black/30 hover:border-white/30"}`}
             >
               <div className="flex items-start justify-between mb-2">
-                <h3 className="text-white font-semibold text-sm leading-tight">{p.name}</h3>
-                <Github size={14} className="text-white/40 group-hover:text-white transition-colors shrink-0 ml-2 mt-0.5" />
+                <h3 className={`font-semibold text-sm leading-tight ${light ? "text-black" : "text-white"}`}>{p.name}</h3>
+                <Github size={14} className={`shrink-0 ml-2 mt-0.5 transition-colors ${light ? "text-black/40 group-hover:text-black" : "text-white/40 group-hover:text-white"}`} />
               </div>
-              <p className="text-white/60 text-xs leading-relaxed mb-3">{p.desc}</p>
-              <p className="font-mono text-xs text-white/50">{p.tech}</p>
+              <p className={`text-xs leading-relaxed mb-3 ${light ? "text-black/60" : "text-white/60"}`}>{p.desc}</p>
+              <p className={`font-mono text-xs ${light ? "text-black/50" : "text-white/50"}`}>{p.tech}</p>
             </a>
           ))}
         </div>
