@@ -37,7 +37,7 @@ const ContactSection = () => {
         </div>
       </div>
 
-      <footer className="mt-24 border-t border-border pt-8 max-w-5xl mx-auto">
+      <footer className="mt-24 border-t border-white/10 pt-8 max-w-5xl mx-auto">
         <p className="text-muted-foreground text-xs">© 2026 Eshaan Kapooswalla</p>
       </footer>
     </section>

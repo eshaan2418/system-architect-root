@@ -9,7 +9,7 @@ const LeadershipSection = () => {
           href="https://awsyorkucloud.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group block border border-border p-8 hover:border-muted-foreground transition-all duration-300 hover:-translate-y-0.5"
+          className="group block border border-white/15 bg-black/30 backdrop-blur-sm p-8 hover:border-white/30 transition-all duration-300 hover:-translate-y-0.5"
         >
           <div className="flex items-start justify-between">
             <div>
