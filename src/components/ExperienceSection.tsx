@@ -1,0 +1,82 @@
+const experiences = [
+  {
+    title: "Engineering Intern",
+    company: "Shopify",
+    location: "Toronto · Hybrid",
+    lines: [
+      "Incoming Summer 2026.",
+      "Working on large-scale production engineering systems.",
+    ],
+  },
+  {
+    title: "Machine Learning Engineer",
+    company: "Mali",
+    location: "Remote",
+    lines: [
+      "Built and deployed PyTorch-based ML pipelines.",
+      "Worked on distributed training and model optimization workflows.",
+    ],
+  },
+  {
+    title: "Machine Learning Software Developer",
+    company: "YU Blueprint",
+    location: "Toronto",
+    lines: [
+      "Developing ML-driven applications for nonprofit organizations.",
+      "Contributing to scalable full-stack systems using React and Django.",
+    ],
+  },
+  {
+    title: "Software Engineering Intern",
+    company: "ITREB Canada",
+    location: "Toronto · Hybrid",
+    lines: [
+      "Built Spring Boot microservices and secure REST APIs.",
+      "Improved system architecture and frontend/backend integration.",
+    ],
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "Prince Aly Khan Hospital",
+    location: "Remote",
+    lines: [
+      "Developed secure healthcare workflow solutions.",
+      "Built responsive React interfaces with strong data compliance.",
+    ],
+  },
+  {
+    title: "VP of Tech",
+    company: "AIESEC",
+    location: "Remote",
+    lines: [
+      "Led technical initiatives supporting global exchange programs.",
+      "Contributed to web systems and event infrastructure.",
+    ],
+  },
+];
+
+const ExperienceSection = () => {
+  return (
+    <section id="experience" className="py-24 px-6">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-foreground mb-16 tracking-tight">Experience</h2>
+        <div className="space-y-12">
+          {experiences.map((exp, i) => (
+            <div key={i} className="group">
+              <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
+              <p className="text-foreground font-medium mt-1">{exp.company}</p>
+              <p className="text-muted-foreground font-mono text-sm mt-1">{exp.location}</p>
+              <div className="mt-3 space-y-1">
+                {exp.lines.map((line, j) => (
+                  <p key={j} className="text-muted-foreground text-sm">{line}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ExperienceSection;
