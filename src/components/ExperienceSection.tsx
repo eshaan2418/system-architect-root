@@ -64,19 +64,19 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="py-28 px-8 lg:px-16">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-foreground mb-16 tracking-tight">Experience</h2>
+        <h2 className="text-3xl font-bold text-white mb-16 tracking-tight">Experience</h2>
         <div className="space-y-12">
           {experiences.map((exp, i) => (
             <div key={i} className="group">
               <div className="flex items-baseline justify-between gap-4">
-                <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-                <span className="text-muted-foreground font-mono text-sm shrink-0">{exp.year}</span>
+                <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                <span className="text-white/50 font-mono text-sm shrink-0">{exp.year}</span>
               </div>
-              <p className="text-foreground font-medium mt-1">{exp.company}</p>
-              <p className="text-muted-foreground font-mono text-sm mt-1">{exp.location}</p>
+              <p className="text-white/90 font-medium mt-1">{exp.company}</p>
+              <p className="text-white/50 font-mono text-sm mt-1">{exp.location}</p>
               <div className="mt-3 space-y-1">
                 {exp.lines.map((line, j) => (
-                  <p key={j} className="text-muted-foreground text-sm">{line}</p>
+                  <p key={j} className="text-white/60 text-sm">{line}</p>
                 ))}
               </div>
             </div>

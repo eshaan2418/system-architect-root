@@ -23,7 +23,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-28 px-8 lg:px-16">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-foreground mb-16 tracking-tight">Projects</h2>
+        <h2 className="text-3xl font-bold text-white mb-16 tracking-tight">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((p, i) => (
             <a
@@ -34,11 +34,11 @@ const ProjectsSection = () => {
               className="group block border border-white/15 bg-black/30 backdrop-blur-sm p-5 hover:border-white/30 transition-all duration-200 hover:-translate-y-0.5"
             >
               <div className="flex items-start justify-between mb-2">
-                <h3 className="text-foreground font-semibold text-sm leading-tight">{p.name}</h3>
-                <Github size={14} className="text-muted-foreground group-hover:text-foreground transition-colors shrink-0 ml-2 mt-0.5" />
+                <h3 className="text-white font-semibold text-sm leading-tight">{p.name}</h3>
+                <Github size={14} className="text-white/40 group-hover:text-white transition-colors shrink-0 ml-2 mt-0.5" />
               </div>
-              <p className="text-muted-foreground text-xs leading-relaxed mb-3">{p.desc}</p>
-              <p className="font-mono text-xs text-muted-foreground">{p.tech}</p>
+              <p className="text-white/60 text-xs leading-relaxed mb-3">{p.desc}</p>
+              <p className="font-mono text-xs text-white/50">{p.tech}</p>
             </a>
           ))}
         </div>
