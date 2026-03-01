@@ -4,6 +4,7 @@ type BgTheme = "ocean" | "black" | "mountains";
 
 interface BgThemeContextType {
   theme: BgTheme;
+  setTheme: (t: BgTheme) => void;
   toggle: () => void;
   audioPlaying: boolean;
   toggleAudio: () => void;
@@ -11,7 +12,8 @@ interface BgThemeContextType {
 }
 
 const BgThemeContext = createContext<BgThemeContextType>({
-  theme: "ocean",
+  theme: "mountains",
+  setTheme: () => {},
   toggle: () => {},
   audioPlaying: false,
   toggleAudio: () => {},
@@ -21,20 +23,22 @@ const BgThemeContext = createContext<BgThemeContextType>({
 export const useBgTheme = () => useContext(BgThemeContext);
 
 export const BgThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<BgTheme>("ocean");
+  const [theme, setThemeState] = useState<BgTheme>("mountains");
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [videoEl, setVideoEl] = useState<HTMLVideoElement | null>(null);
 
+  const setTheme = useCallback((t: BgTheme) => {
+    if (t === "black" && videoEl) {
+      videoEl.muted = true;
+      setAudioPlaying(false);
+    }
+    setThemeState(t);
+  }, [videoEl]);
+
   const toggle = () => {
-    setTheme((t) => {
-      const order: BgTheme[] = ["ocean", "mountains", "black"];
-      const next = order[(order.indexOf(t) + 1) % order.length];
-      if (next === "black" && videoEl) {
-        videoEl.muted = true;
-        setAudioPlaying(false);
-      }
-      return next;
-    });
+    const order: BgTheme[] = ["mountains", "ocean", "black"];
+    const next = order[(order.indexOf(theme) + 1) % order.length];
+    setTheme(next);
   };
 
   const toggleAudio = useCallback(() => {
@@ -55,7 +59,7 @@ export const BgThemeProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <BgThemeContext.Provider value={{ theme, toggle, audioPlaying, toggleAudio, setVideoRef }}>
+    <BgThemeContext.Provider value={{ theme, setTheme, toggle, audioPlaying, toggleAudio, setVideoRef }}>
       {children}
     </BgThemeContext.Provider>
   );
