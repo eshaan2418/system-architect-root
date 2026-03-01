@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X, Waves, Moon } from "lucide-react";
+import { useBgTheme } from "@/hooks/useBgTheme";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -12,13 +13,24 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggle } = useBgTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
       <div className="w-full px-8 lg:px-16 h-14 flex items-center justify-between">
-        <a href="#home" className="text-foreground font-bold text-sm tracking-tight hover:text-[hsl(var(--accent))] transition-colors">
-          Eshaan Kapooswalla
-        </a>
+        <div className="flex items-center gap-3">
+          <a href="#home" className="text-foreground font-bold text-sm tracking-tight hover:text-[hsl(var(--accent))] transition-colors">
+            Eshaan Kapooswalla
+          </a>
+          <button
+            onClick={toggle}
+            className="text-muted-foreground hover:text-foreground transition-colors p-1.5 border border-white/10 rounded-sm hover:border-white/30"
+            aria-label="Toggle background theme"
+            title={theme === "ocean" ? "Switch to black" : "Switch to ocean"}
+          >
+            {theme === "ocean" ? <Moon size={14} /> : <Waves size={14} />}
+          </button>
+        </div>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
@@ -31,7 +43,7 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <div className="flex items-center gap-3 ml-4 border-l border-border pl-4">
+          <div className="flex items-center gap-3 ml-4 border-l border-white/10 pl-4">
             <a href="https://github.com/eshaan2418" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Github size={16} />
             </a>
@@ -56,7 +68,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-background px-6 py-4 space-y-3">
+        <div className="md:hidden border-t border-white/10 bg-black/80 backdrop-blur-md px-6 py-4 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -67,7 +79,7 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <div className="flex items-center gap-4 pt-3 border-t border-border">
+          <div className="flex items-center gap-4 pt-3 border-t border-white/10">
             <a href="https://github.com/eshaan2418" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Github size={16} />
             </a>
