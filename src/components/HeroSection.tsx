@@ -15,8 +15,7 @@ const HeroSection = () => {
           ))}
         </div>
         <div className="space-y-1 mb-10">
-          <p className="text-white text-lg">I build systems that scale.</p>
-          <p className="text-white text-lg">I turn complex ideas into clean architecture.</p>
+          <p className="text-white text-lg">Product Engineer + Community Builder</p>
           <p className="text-white/60 text-lg">Toronto, ON, CA</p>
         </div>
         <div className="flex gap-4">
