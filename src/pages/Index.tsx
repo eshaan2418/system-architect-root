@@ -16,15 +16,20 @@ const MountainVideo = () => {
     const video = ref.current;
     if (!video) return;
 
-    const onEnded = () => {
-      video.currentTime = 0;
-      video.play().catch(() => {});
+    const onTimeUpdate = () => {
+      if (!video.duration || Number.isNaN(video.duration)) return;
+
+      // Skip the final dark frames and jump back seamlessly
+      if (video.duration - video.currentTime <= 0.35) {
+        video.currentTime = 0.08;
+        video.play().catch(() => {});
+      }
     };
 
-    video.addEventListener("ended", onEnded);
+    video.addEventListener("timeupdate", onTimeUpdate);
 
     return () => {
-      video.removeEventListener("ended", onEnded);
+      video.removeEventListener("timeupdate", onTimeUpdate);
     };
   }, []);
 
@@ -32,9 +37,9 @@ const MountainVideo = () => {
     <video
       ref={ref}
       autoPlay
+      loop
       muted
       playsInline
-      preload="auto"
       className="fixed inset-0 w-full h-full object-cover z-0"
     >
       <source
