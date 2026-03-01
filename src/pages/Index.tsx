@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -11,53 +11,22 @@ import { BgThemeProvider, useBgTheme } from "@/hooks/useBgTheme";
 
 const MountainVideo = () => {
   const ref = useRef<HTMLVideoElement>(null);
-  const reversingRef = useRef(false);
-  const rafRef = useRef<number>(0);
-
-  const startReverse = useCallback(() => {
-    const video = ref.current;
-    if (!video || reversingRef.current) return;
-
-    reversingRef.current = true;
-    video.pause();
-
-    const step = () => {
-      const el = ref.current;
-      if (!el || !reversingRef.current) return;
-
-      if (el.currentTime <= 0.08) {
-        reversingRef.current = false;
-        el.currentTime = 0;
-        el.play().catch(() => {});
-        return;
-      }
-
-      el.currentTime = Math.max(0, el.currentTime - 0.04);
-      rafRef.current = requestAnimationFrame(step);
-    };
-
-    rafRef.current = requestAnimationFrame(step);
-  }, []);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
 
-    const onTimeUpdate = () => {
-      if (!video.duration || reversingRef.current) return;
-      if (video.currentTime >= video.duration - 0.08) {
-        startReverse();
-      }
+    const onEnded = () => {
+      video.currentTime = 0;
+      video.play().catch(() => {});
     };
 
-    video.addEventListener("timeupdate", onTimeUpdate);
+    video.addEventListener("ended", onEnded);
 
     return () => {
-      video.removeEventListener("timeupdate", onTimeUpdate);
-      cancelAnimationFrame(rafRef.current);
-      reversingRef.current = false;
+      video.removeEventListener("ended", onEnded);
     };
-  }, [startReverse]);
+  }, []);
 
   return (
     <video
