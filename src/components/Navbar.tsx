@@ -13,9 +13,9 @@ const navLinks = [
 
 const themeOptions: { key: "mountains" | "ocean" | "newyork" | "sanfrancisco" | "black" | "light"; icon: typeof Mountain; label: string }[] = [
   { key: "newyork", icon: Building2, label: "New York" },
+  { key: "sanfrancisco", icon: Landmark, label: "San Francisco" },
   { key: "mountains", icon: Mountain, label: "Mountains" },
   { key: "ocean", icon: Waves, label: "Ocean" },
-  { key: "sanfrancisco", icon: Landmark, label: "San Francisco" },
   { key: "black", icon: Moon, label: "Night" },
   { key: "light", icon: Sun, label: "Light" },
 ];

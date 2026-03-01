@@ -36,7 +36,7 @@ export const BgThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [videoEl]);
 
   const toggle = () => {
-    const order: BgTheme[] = ["newyork", "mountains", "ocean", "sanfrancisco", "black", "light"];
+    const order: BgTheme[] = ["newyork", "sanfrancisco", "mountains", "ocean", "black", "light"];
     const next = order[(order.indexOf(theme) + 1) % order.length];
     setTheme(next);
   };
