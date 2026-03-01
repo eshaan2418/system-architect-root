@@ -16,7 +16,7 @@ const projects = [
   { name: "Cabieeee", desc: "Real-time cab-ordering mobile application.", tech: "JavaScript", url: "https://github.com/eshaan2418/Cabieeee" },
   { name: "Gideon-AI-Desktop-Assistant", desc: "Voice-controlled desktop AI assistant.", tech: "Python", url: "https://github.com/eshaan2418/Gideon-AI-Desktop-Assistant" },
   { name: "WebRTC-Video-Rooms", desc: "Real-time video chat with screen sharing using WebRTC.", tech: "JavaScript", url: "https://github.com/eshaan2418/WebRTC-Video-Rooms" },
-  { name: "algorithmic-trading-bot-", desc: "Algorithmic trading experiments (in progress).", tech: "Python", url: "https://github.com/eshaan2418/algorithmic-trading-bot-" },
+  { name: "algorithmic-trading-bot-", desc: "Algorithmic trading experiments.", tech: "Python", url: "https://github.com/eshaan2418/algorithmic-trading-bot-" },
 ];
 
 const ProjectsSection = () => {
