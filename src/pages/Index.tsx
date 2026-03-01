@@ -59,7 +59,7 @@ const IndexContent = () => {
             className="fixed inset-0 w-full h-full object-cover z-0"
           >
             <source
-              src="https://videos.pexels.com/video-files/2330381/2330381-uhd_2560_1440_30fps.mp4"
+              src="https://videos.pexels.com/video-files/4169986/4169986-uhd_2560_1440_30fps.mp4"
               type="video/mp4"
             />
           </video>
