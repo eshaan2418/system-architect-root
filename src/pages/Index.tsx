@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -9,7 +10,21 @@ import FadeIn from "@/components/FadeIn";
 import { BgThemeProvider, useBgTheme } from "@/hooks/useBgTheme";
 
 const IndexContent = () => {
-  const { theme } = useBgTheme();
+  const { theme, audioPlaying, setVideoRef } = useBgTheme();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      setVideoRef(videoRef.current);
+    }
+  }, [setVideoRef]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = !audioPlaying;
+      videoRef.current.volume = 0.4;
+    }
+  }, [audioPlaying]);
 
   return (
     <div className="relative min-h-screen">
@@ -17,6 +32,7 @@ const IndexContent = () => {
       {theme === "ocean" && (
         <>
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
