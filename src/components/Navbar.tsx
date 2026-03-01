@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, Menu, X, Waves, Moon, Mountain } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X, Waves, Moon, Mountain, Building2, Landmark, Globe } from "lucide-react";
 import { useBgTheme } from "@/hooks/useBgTheme";
 
 const navLinks = [
@@ -11,9 +11,12 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const themeOptions: { key: "mountains" | "ocean" | "black"; icon: typeof Mountain; label: string }[] = [
+const themeOptions: { key: "mountains" | "ocean" | "newyork" | "sanfrancisco" | "mumbai" | "black"; icon: typeof Mountain; label: string }[] = [
   { key: "mountains", icon: Mountain, label: "Mountains" },
   { key: "ocean", icon: Waves, label: "Ocean" },
+  { key: "newyork", icon: Building2, label: "New York" },
+  { key: "sanfrancisco", icon: Landmark, label: "San Francisco" },
+  { key: "mumbai", icon: Globe, label: "Mumbai" },
   { key: "black", icon: Moon, label: "Night" },
 ];
 

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
-type BgTheme = "ocean" | "black" | "mountains";
+type BgTheme = "mountains" | "ocean" | "newyork" | "sanfrancisco" | "mumbai" | "black";
 
 interface BgThemeContextType {
   theme: BgTheme;
@@ -36,7 +36,7 @@ export const BgThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [videoEl]);
 
   const toggle = () => {
-    const order: BgTheme[] = ["mountains", "ocean", "black"];
+    const order: BgTheme[] = ["mountains", "ocean", "newyork", "sanfrancisco", "mumbai", "black"];
     const next = order[(order.indexOf(theme) + 1) % order.length];
     setTheme(next);
   };
