@@ -50,7 +50,7 @@ const experiences = [
     ],
   },
   {
-    title: "VP of Tech",
+    title: "Vice President of Technology",
     company: "AIESEC",
     location: "Remote",
     year: "2023",
