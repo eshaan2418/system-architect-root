@@ -117,19 +117,14 @@ const IndexContent = () => {
         </>
       )}
 
-      {/* Mumbai video background */}
-      {theme === "mumbai" && (
-        <>
-          <video autoPlay loop muted playsInline className="fixed inset-0 w-full h-full object-cover z-0">
-            <source src="https://videos.pexels.com/video-files/15105723/15105723-uhd_2560_1440_24fps.mp4" type="video/mp4" />
-          </video>
-          <div className="fixed inset-0 bg-black/50 z-[1]" />
-        </>
-      )}
-
       {/* Black background */}
       {theme === "black" && (
         <div className="fixed inset-0 bg-black z-0" />
+      )}
+
+      {/* Light background */}
+      {theme === "light" && (
+        <div className="fixed inset-0 bg-white z-0" />
       )}
 
       {/* Content */}

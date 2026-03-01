@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
-type BgTheme = "mountains" | "ocean" | "newyork" | "sanfrancisco" | "mumbai" | "black";
+type BgTheme = "mountains" | "ocean" | "newyork" | "sanfrancisco" | "black" | "light";
 
 interface BgThemeContextType {
   theme: BgTheme;
@@ -12,7 +12,7 @@ interface BgThemeContextType {
 }
 
 const BgThemeContext = createContext<BgThemeContextType>({
-  theme: "mountains",
+  theme: "newyork",
   setTheme: () => {},
   toggle: () => {},
   audioPlaying: false,
@@ -23,7 +23,7 @@ const BgThemeContext = createContext<BgThemeContextType>({
 export const useBgTheme = () => useContext(BgThemeContext);
 
 export const BgThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setThemeState] = useState<BgTheme>("mountains");
+  const [theme, setThemeState] = useState<BgTheme>("newyork");
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [videoEl, setVideoEl] = useState<HTMLVideoElement | null>(null);
 
@@ -36,7 +36,7 @@ export const BgThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [videoEl]);
 
   const toggle = () => {
-    const order: BgTheme[] = ["mountains", "ocean", "newyork", "sanfrancisco", "mumbai", "black"];
+    const order: BgTheme[] = ["newyork", "mountains", "ocean", "sanfrancisco", "black", "light"];
     const next = order[(order.indexOf(theme) + 1) % order.length];
     setTheme(next);
   };
