@@ -43,7 +43,7 @@ const MountainVideo = () => {
       className="fixed inset-0 w-full h-full object-cover z-0"
     >
       <source
-        src="https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_24fps.mp4"
+        src="https://videos.pexels.com/video-files/4878912/4878912-uhd_2560_1440_24fps.mp4"
         type="video/mp4"
       />
     </video>
