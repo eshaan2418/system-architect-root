@@ -11,9 +11,15 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const themeOptions: { key: "mountains" | "ocean" | "black"; icon: typeof Mountain; label: string }[] = [
+  { key: "mountains", icon: Mountain, label: "Mountains" },
+  { key: "ocean", icon: Waves, label: "Ocean" },
+  { key: "black", icon: Moon, label: "Night" },
+];
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { theme, toggle } = useBgTheme();
+  const { theme, setTheme } = useBgTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
@@ -22,14 +28,23 @@ const Navbar = () => {
           <a href="#home" className="text-white font-bold text-sm tracking-tight hover:text-white/70 transition-colors">
             Eshaan Kapooswalla
           </a>
-          <button
-            onClick={toggle}
-            className="text-muted-foreground hover:text-foreground transition-colors p-1.5 border border-white/10 rounded-sm hover:border-white/30"
-            aria-label="Toggle background theme"
-            title={theme === "ocean" ? "Switch to mountains" : theme === "mountains" ? "Switch to black" : "Switch to ocean"}
-          >
-            {theme === "ocean" ? <Mountain size={14} /> : theme === "mountains" ? <Moon size={14} /> : <Waves size={14} />}
-          </button>
+          <div className="flex items-center gap-1 ml-1">
+            {themeOptions.map(({ key, icon: Icon, label }) => (
+              <button
+                key={key}
+                onClick={() => setTheme(key)}
+                className={`p-1.5 border rounded-sm transition-colors ${
+                  theme === key
+                    ? "text-white border-white/40 bg-white/10"
+                    : "text-muted-foreground border-white/10 hover:text-foreground hover:border-white/30"
+                }`}
+                aria-label={label}
+                title={label}
+              >
+                <Icon size={14} />
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Desktop */}
