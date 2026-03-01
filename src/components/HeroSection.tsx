@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-14">
       <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-7xl font-black text-foreground tracking-tight leading-none mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-tight leading-none mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Eshaan Kapooswalla
         </h1>
         <div className="flex flex-wrap gap-3 mb-8">
