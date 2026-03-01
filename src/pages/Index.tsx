@@ -14,35 +14,50 @@ const MountainVideo = () => {
   const reversingRef = useRef(false);
   const rafRef = useRef<number>(0);
 
-  const reversePlay = useCallback(() => {
+  const startReverse = useCallback(() => {
     const video = ref.current;
-    if (!video) return;
+    if (!video || reversingRef.current) return;
+
     reversingRef.current = true;
     video.pause();
+
     const step = () => {
-      if (!reversingRef.current || !ref.current) return;
-      if (ref.current.currentTime <= 0.1) {
+      const el = ref.current;
+      if (!el || !reversingRef.current) return;
+
+      if (el.currentTime <= 0.08) {
         reversingRef.current = false;
-        ref.current.currentTime = 0;
-        ref.current.play().catch(() => {});
+        el.currentTime = 0;
+        el.play().catch(() => {});
         return;
       }
-      ref.current.currentTime -= 0.05;
+
+      el.currentTime = Math.max(0, el.currentTime - 0.04);
       rafRef.current = requestAnimationFrame(step);
     };
-    step();
+
+    rafRef.current = requestAnimationFrame(step);
   }, []);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
-    const onEnded = () => reversePlay();
-    video.addEventListener("ended", onEnded);
-    return () => {
-      video.removeEventListener("ended", onEnded);
-      cancelAnimationFrame(rafRef.current);
+
+    const onTimeUpdate = () => {
+      if (!video.duration || reversingRef.current) return;
+      if (video.currentTime >= video.duration - 0.08) {
+        startReverse();
+      }
     };
-  }, [reversePlay]);
+
+    video.addEventListener("timeupdate", onTimeUpdate);
+
+    return () => {
+      video.removeEventListener("timeupdate", onTimeUpdate);
+      cancelAnimationFrame(rafRef.current);
+      reversingRef.current = false;
+    };
+  }, [startReverse]);
 
   return (
     <video
@@ -50,6 +65,7 @@ const MountainVideo = () => {
       autoPlay
       muted
       playsInline
+      preload="auto"
       className="fixed inset-0 w-full h-full object-cover z-0"
     >
       <source
