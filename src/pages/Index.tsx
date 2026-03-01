@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -8,6 +8,57 @@ import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import FadeIn from "@/components/FadeIn";
 import { BgThemeProvider, useBgTheme } from "@/hooks/useBgTheme";
+
+const MountainVideo = () => {
+  const ref = useRef<HTMLVideoElement>(null);
+  const reversingRef = useRef(false);
+  const rafRef = useRef<number>(0);
+
+  const reversePlay = useCallback(() => {
+    const video = ref.current;
+    if (!video) return;
+    reversingRef.current = true;
+    video.pause();
+    const step = () => {
+      if (!reversingRef.current || !ref.current) return;
+      if (ref.current.currentTime <= 0.1) {
+        reversingRef.current = false;
+        ref.current.currentTime = 0;
+        ref.current.play().catch(() => {});
+        return;
+      }
+      ref.current.currentTime -= 0.05;
+      rafRef.current = requestAnimationFrame(step);
+    };
+    step();
+  }, []);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const onEnded = () => reversePlay();
+    video.addEventListener("ended", onEnded);
+    return () => {
+      video.removeEventListener("ended", onEnded);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, [reversePlay]);
+
+  return (
+    <video
+      ref={ref}
+      autoPlay
+      muted
+      playsInline
+      className="fixed inset-0 w-full h-full object-cover z-0"
+    >
+      <source
+        src="https://videos.pexels.com/video-files/4169986/4169986-uhd_2560_1440_30fps.mp4"
+        type="video/mp4"
+      />
+    </video>
+  );
+};
 
 const IndexContent = () => {
   const { theme, audioPlaying, setVideoRef } = useBgTheme();
@@ -51,18 +102,7 @@ const IndexContent = () => {
       {/* Mountains video background */}
       {theme === "mountains" && (
         <>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="fixed inset-0 w-full h-full object-cover z-0"
-          >
-            <source
-              src="https://videos.pexels.com/video-files/4169986/4169986-uhd_2560_1440_30fps.mp4"
-              type="video/mp4"
-            />
-          </video>
+          <MountainVideo />
           <div className="fixed inset-0 bg-black/50 z-[1]" />
         </>
       )}
