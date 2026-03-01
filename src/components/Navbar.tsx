@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
       <div className="w-full px-8 lg:px-16 h-14 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <a href="#home" className="text-foreground font-bold text-sm tracking-tight hover:text-[hsl(var(--accent))] transition-colors">
+          <a href="#home" className="text-white font-bold text-sm tracking-tight hover:text-white/70 transition-colors">
             Eshaan Kapooswalla
           </a>
           <button
@@ -38,19 +38,19 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-muted-foreground text-xs uppercase tracking-widest hover:text-foreground transition-colors"
+              className="text-white/60 text-xs uppercase tracking-widest hover:text-white transition-colors"
             >
               {link.label}
             </a>
           ))}
           <div className="flex items-center gap-3 ml-4 border-l border-white/10 pl-4">
-            <a href="https://github.com/eshaan2418" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://github.com/eshaan2418" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
               <Github size={16} />
             </a>
-            <a href="https://www.linkedin.com/in/eshaankap" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://www.linkedin.com/in/eshaankap" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
               <Linkedin size={16} />
             </a>
-            <a href="mailto:eshaank@my.yorku.ca" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="mailto:eshaank@my.yorku.ca" className="text-white/50 hover:text-white transition-colors">
               <Mail size={16} />
             </a>
           </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -74,19 +74,19 @@ const Navbar = () => {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-muted-foreground text-sm hover:text-foreground transition-colors"
+              className="block text-white/60 text-sm hover:text-white transition-colors"
             >
               {link.label}
             </a>
           ))}
           <div className="flex items-center gap-4 pt-3 border-t border-white/10">
-            <a href="https://github.com/eshaan2418" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://github.com/eshaan2418" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
               <Github size={16} />
             </a>
-            <a href="https://www.linkedin.com/in/eshaankap" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://www.linkedin.com/in/eshaankap" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
               <Linkedin size={16} />
             </a>
-            <a href="mailto:eshaank@my.yorku.ca" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="mailto:eshaank@my.yorku.ca" className="text-white/50 hover:text-white transition-colors">
               <Mail size={16} />
             </a>
           </div>
