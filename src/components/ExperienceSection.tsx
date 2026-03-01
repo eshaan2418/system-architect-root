@@ -62,8 +62,8 @@ const experiences = [
 ];
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="experience" className="py-28 px-8 lg:px-16">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground mb-16 tracking-tight">Experience</h2>
         <div className="space-y-12">
           {experiences.map((exp, i) => (
