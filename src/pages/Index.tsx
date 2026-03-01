@@ -13,8 +13,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FadeIn><ExperienceSection /></FadeIn>
-      <FadeIn><ProjectsSection /></FadeIn>
       <FadeIn><LeadershipSection /></FadeIn>
+      <FadeIn><ProjectsSection /></FadeIn>
       <FadeIn><EducationSection /></FadeIn>
       <FadeIn><ContactSection /></FadeIn>
     </div>
