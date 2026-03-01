@@ -14,7 +14,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
       <div className="w-full px-8 lg:px-16 h-14 flex items-center justify-between">
         <a href="#home" className="text-foreground font-bold text-sm tracking-tight hover:text-[hsl(var(--accent))] transition-colors">
           Eshaan Kapooswalla

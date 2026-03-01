@@ -9,7 +9,7 @@ const HeroSection = () => {
         </h1>
         <div className="flex flex-wrap gap-3 mb-8">
           {["LLM & AI Systems", "Distributed Systems", "Backend Development", "Parallel Computing", "Graphics Programming", "Anything Cool"].map((interest) => (
-            <span key={interest} className="text-muted-foreground text-sm font-mono border border-border px-3 py-1">
+            <span key={interest} className="text-white/70 text-sm font-mono border border-white/15 bg-black/30 backdrop-blur-sm px-3 py-1">
               {interest}
             </span>
           ))}
@@ -22,7 +22,7 @@ const HeroSection = () => {
         <div className="flex gap-4">
           <a
             href="mailto:eshaank@my.yorku.ca"
-            className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 text-sm font-semibold hover:bg-foreground/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 text-sm font-semibold hover:bg-white/90 transition-colors"
           >
             <Mail size={16} />
             Email Me
@@ -31,7 +31,7 @@ const HeroSection = () => {
             href="https://github.com/eshaan2418"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 text-sm font-semibold hover:border-foreground transition-colors"
+            className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 text-sm font-semibold hover:border-white transition-colors"
           >
             <Github size={16} />
             GitHub

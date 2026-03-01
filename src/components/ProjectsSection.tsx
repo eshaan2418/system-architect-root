@@ -31,7 +31,7 @@ const ProjectsSection = () => {
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block border border-border p-5 hover:border-muted-foreground transition-all duration-200 hover:-translate-y-0.5"
+              className="group block border border-white/15 bg-black/30 backdrop-blur-sm p-5 hover:border-white/30 transition-all duration-200 hover:-translate-y-0.5"
             >
               <div className="flex items-start justify-between mb-2">
                 <h3 className="text-foreground font-semibold text-sm leading-tight">{p.name}</h3>
