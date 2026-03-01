@@ -65,9 +65,9 @@ const ExperienceSection = () => {
     <section id="experience" className="py-28 px-8 lg:px-16">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-white mb-16 tracking-tight">Experience</h2>
-        <div className="space-y-12">
+        <div className="space-y-4">
           {experiences.map((exp, i) => (
-            <div key={i} className="group">
+            <div key={i} className="group border border-white/15 bg-black/30 backdrop-blur-sm p-6 hover:border-white/30 transition-all duration-200 hover:-translate-y-0.5">
               <div className="flex items-baseline justify-between gap-4">
                 <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
                 <span className="text-white/50 font-mono text-sm shrink-0">{exp.year}</span>
