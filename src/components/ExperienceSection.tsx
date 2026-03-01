@@ -1,7 +1,7 @@
 const experiences = [
   {
-    title: "Engineering Intern",
-    company: "Shopify",
+    title: "Software Engineer",
+    company: "Shopify · Internship",
     location: "Toronto · Hybrid",
     year: "2026",
     lines: [
@@ -10,7 +10,7 @@ const experiences = [
     ],
   },
   {
-    title: "Machine Learning Engineer",
+    title: "Founding Machine Learning Software Engineer",
     company: "Mali",
     location: "Remote",
     year: "2025",
@@ -30,8 +30,8 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineering Intern",
-    company: "ITREB Canada",
+    title: "Software Engineer",
+    company: "ITREB Canada · Internship",
     location: "Toronto · Hybrid",
     year: "2024",
     lines: [
@@ -40,8 +40,8 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer Intern",
-    company: "Prince Aly Khan Hospital",
+    title: "Software Engineer",
+    company: "Prince Aly Khan Hospital · Internship",
     location: "Remote",
     year: "2023",
     lines: [
