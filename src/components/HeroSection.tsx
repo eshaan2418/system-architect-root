@@ -7,7 +7,7 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none mb-6 font-sans">
           Eshaan Kapooswalla
         </h1>
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="hidden lg:flex flex-wrap gap-3 mb-8">
           {["Machine Learning", "LLM & AI Systems", "Distributed Systems", "Backend Development", "Parallel Computing", "Graphics Programming", "Frontend Design", "Blockchain", "Quantum Cryptography", "Anything Cool"].map((interest) => (
             <span key={interest} className="text-white/70 text-sm font-mono border border-white/20 bg-black/30 backdrop-blur-sm px-3 py-1">
               {interest}
