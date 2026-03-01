@@ -101,7 +101,7 @@ const IndexContent = () => {
       {theme === "newyork" && (
         <>
           <video autoPlay loop muted playsInline className="fixed inset-0 w-full h-full object-cover z-0">
-            <source src="https://videos.pexels.com/video-files/5828446/5828446-uhd_2560_1440_24fps.mp4" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/5868771/5868771-uhd_2560_1440_30fps.mp4" type="video/mp4" />
           </video>
           <div className="fixed inset-0 bg-black/50 z-[1]" />
         </>
