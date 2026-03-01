@@ -7,10 +7,12 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-7xl font-black text-foreground tracking-tight leading-none mb-6">
           Eshaan Kapooswalla
         </h1>
-        <div className="space-y-1 mb-8">
-          <p className="text-muted-foreground text-lg font-mono">Software Engineering @ YorkU</p>
-          <p className="text-muted-foreground text-lg font-mono">Incoming Engineering Intern @ Shopify</p>
-          <p className="text-muted-foreground text-lg font-mono">ML · Distributed Systems · Cloud</p>
+        <div className="flex flex-wrap gap-3 mb-8">
+          {["LLM & AI Systems", "Distributed Systems", "Backend Development", "Parallel Computing", "Graphics Programming"].map((interest) => (
+            <span key={interest} className="text-muted-foreground text-sm font-mono border border-border px-3 py-1">
+              {interest}
+            </span>
+          ))}
         </div>
         <div className="space-y-1 mb-10">
           <p className="text-foreground text-lg">I build systems that scale.</p>
