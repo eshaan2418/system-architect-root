@@ -1,6 +1,6 @@
 const experiences = [
   {
-    title: "Engineer",
+    title: "Engineering",
     company: "Shopify · Internship",
     location: "Toronto · Hybrid",
     year: "2026",
