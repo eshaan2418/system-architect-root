@@ -2,8 +2,8 @@ import { Github, Mail } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-14">
-      <div className="max-w-3xl">
+    <section id="home" className="min-h-screen flex items-center px-8 lg:px-16 pt-14">
+      <div className="max-w-5xl w-full mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-tight leading-none mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Eshaan Kapooswalla
         </h1>

@@ -1,7 +1,7 @@
 const EducationSection = () => {
   return (
-    <section id="education" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="education" className="py-28 px-8 lg:px-16">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground mb-16 tracking-tight">Education</h2>
         <div>
           <h3 className="text-xl font-semibold text-foreground">York University</h3>

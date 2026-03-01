@@ -2,8 +2,8 @@ import { ExternalLink } from "lucide-react";
 
 const LeadershipSection = () => {
   return (
-    <section id="leadership" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="leadership" className="py-28 px-8 lg:px-16">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground mb-16 tracking-tight">Leadership</h2>
         <a
           href="https://awsyorkucloud.com/"
