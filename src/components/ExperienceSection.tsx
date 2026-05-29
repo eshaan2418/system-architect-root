@@ -2,13 +2,13 @@ import { useBgTheme } from "@/hooks/useBgTheme";
 
 const experiences = [
   {
-    title: "Engineering",
-    company: "Shopify · Internship",
-    location: "Toronto · Hybrid",
+    title: "Machine Learning Engineering Intern",
+    company: "Shopify",
+    location: "Toronto, ON",
     year: "2026",
     lines: [
-      "Incoming Summer 2026.",
-      "Working on large-scale production engineering systems.",
+      "User Recommendations team, improving search relevance and recommendation accuracy for large-scale product discovery systems.",
+      "Search Relevance team — building production systems in C++ and Python to optimize ranking and retrieval pipelines.",
     ],
   },
   {
