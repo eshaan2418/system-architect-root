@@ -12,6 +12,17 @@ const experiences = [
     ],
   },
   {
+    title: "Machine Learning Researcher",
+    company: "Vector Institute · Volunteer",
+    location: "Toronto, ON",
+    year: "2026",
+    lines: [
+      "Developed SAGE-KV, an entropy-calibrated sparse attention mechanism that reduced Transformer decode latency by dynamically routing queries to local, global, and semantic KV-cache pages while minimizing unnecessary GPU memory reads.",
+      "Designed a Python/C++/CUDA prototype and benchmarking framework, evaluating sparse attention against dense, sliding-window, static sparse, and FlashAttention-style baselines using p50/p90/p99 latency, fallback rate, bandwidth, and retrieval-quality metrics.",
+    ],
+    link: "https://drive.google.com/file/d/1vsVoP_sBgLqXQblE80stIUYyOGJpyLm8/view",
+  },
+  {
     title: "Founding Machine Learning Software Engineer",
     company: "Mali",
     location: "Remote",
