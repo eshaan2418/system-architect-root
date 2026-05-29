@@ -1,7 +1,8 @@
-import { Github } from "lucide-react";
+import { Github, Globe } from "lucide-react";
 import { useBgTheme } from "@/hooks/useBgTheme";
 
 const projects = [
+  { name: "📊 FinanceSimple", desc: "Full-stack fintech platform for tracking net worth, spending, debts, investments, crypto, real estate, and sandbox paper trading, with secure authentication, Row Level Security, financial analytics, report generation, and a polished dashboard experience.", tech: "React · Spring Boot · Gemini · PostgreSQL", url: "https://finpilotapp.xyz/", isLive: true },
   { name: "DistData", desc: "Fault-tolerant distributed database system with consensus and transaction logic.", tech: "C++", url: "https://github.com/eshaan2418/DIstData" },
   { name: "EshaanOS", desc: "Educational operating system simulator exploring scheduling and memory management.", tech: "C++", url: "https://github.com/eshaan2418/EshaanOS" },
   { name: "Jobber", desc: "Microservices job portal built with Spring Boot and React.", tech: "TypeScript · Java", url: "https://github.com/eshaan2418/Jobber" },
