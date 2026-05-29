@@ -95,6 +95,16 @@ const ExperienceSection = () => {
                 {exp.lines.map((line, j) => (
                   <p key={j} className={`text-sm ${light ? "text-black/60" : "text-white/60"}`}>{line}</p>
                 ))}
+                {exp.link && (
+                  <a
+                    href={exp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-block text-sm underline underline-offset-2 mt-1 ${light ? "text-black/70 hover:text-black" : "text-white/70 hover:text-white"}`}
+                  >
+                    View research paper →
+                  </a>
+                )}
               </div>
             </div>
           ))}
