@@ -6,6 +6,7 @@ const heroExperiences = [
   { year: "2026", company: "Wealthsimple" },
   { year: "2026", company: "Shopify" },
   { year: "2026", company: "Vector Institute" },
+  { year: "2025", company: "Amazon Web Services (SBG)" },
   { year: "2025", company: "Mali" },
   { year: "2025", company: "YU Blueprint" },
   { year: "2024", company: "ITREB Canada" },
