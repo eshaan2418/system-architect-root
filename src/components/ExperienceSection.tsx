@@ -101,13 +101,16 @@ const ExperienceSection = () => {
       <div className="max-w-5xl mx-auto">
         <h2 className={`text-3xl font-bold mb-16 tracking-tight ${light ? "text-black" : "text-white"}`}>Experience</h2>
         <div className="space-y-4">
-          {experiences.map((exp, i) => (
+          {experiences.map((exp, i) => {
+            const [companyName, ...suffixParts] = exp.company.split(" · ");
+            const suffix = suffixParts.join(" · ");
+            return (
             <div key={i} className={`group border backdrop-blur-sm p-6 transition-all duration-200 hover:-translate-y-0.5 ${light ? "border-black/10 bg-gray-100/80 hover:border-black/25 shadow-sm" : "border-white/15 bg-black/30 hover:border-white/30"}`}>
               <div className="flex items-baseline justify-between gap-4">
-                <h3 className={`text-xl font-semibold ${light ? "text-black" : "text-white"}`}>{exp.company}</h3>
+                <h3 className={`text-xl font-semibold ${light ? "text-black" : "text-white"}`}>{companyName}</h3>
                 <span className={`font-mono text-sm shrink-0 ${light ? "text-black/50" : "text-white/50"}`}>{exp.year}</span>
               </div>
-              <p className={`font-medium mt-1 ${light ? "text-black/90" : "text-white/90"}`}>{exp.title}</p>
+              <p className={`font-medium mt-1 ${light ? "text-black/90" : "text-white/90"}`}>{exp.title}{suffix && <span className={light ? "text-black/50" : "text-white/50"}> · {suffix}</span>}</p>
               <p className={`font-mono text-sm mt-1 ${light ? "text-black/50" : "text-white/50"}`}>{exp.location}</p>
               <div className="mt-3 space-y-1">
                 {exp.lines.map((line, j) => (
