@@ -2,8 +2,8 @@ import { useBgTheme } from "@/hooks/useBgTheme";
 
 const experiences = [
   {
-    title: "Intern of Technical Staff / Forward Deployed Engineer",
-    company: "Cohere",
+    title: "Member of Technical Staff / Forward Deployed Engineer",
+    company: "Cohere · Internship",
     location: "Toronto, ON",
     year: "2027",
     lines: [
@@ -11,8 +11,8 @@ const experiences = [
     ],
   },
   {
-    title: "Engineering Intern",
-    company: "Wealthsimple",
+    title: "Engineering",
+    company: "Wealthsimple · Internship",
     location: "Toronto, ON",
     year: "2026",
     lines: [
