@@ -1,4 +1,4 @@
-import { Github, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { useBgTheme } from "@/hooks/useBgTheme";
 
 const heroExperiences = [
@@ -38,6 +38,15 @@ const HeroSection = () => {
             >
               <Mail size={16} />
               Email Me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/eshaankapooswalla/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 border px-6 py-3 text-sm font-semibold transition-colors ${light ? "border-black/30 text-black hover:border-black" : "border-white/30 text-white hover:border-white"}`}
+            >
+              <Linkedin size={16} />
+              LinkedIn
             </a>
             <a
               href="https://github.com/eshaan2418"
