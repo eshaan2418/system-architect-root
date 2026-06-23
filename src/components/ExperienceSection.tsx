@@ -20,8 +20,8 @@ const experiences = [
     ],
   },
   {
-    title: "Machine Learning Engineering Intern",
-    company: "Shopify",
+    title: "Machine Learning Engineer",
+    company: "Shopify · Internship",
     location: "Toronto, ON",
     year: "2026",
     lines: [
