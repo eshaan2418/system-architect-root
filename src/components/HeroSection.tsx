@@ -11,13 +11,6 @@ const HeroSection = () => {
         <h1 className={`text-5xl md:text-7xl font-extrabold tracking-tight leading-none mb-6 font-sans ${light ? "text-black" : "text-white"}`}>
           Eshaan Kapooswalla
         </h1>
-        <div className="hidden lg:flex flex-wrap gap-3 mb-8">
-          {["Machine Learning", "LLM & AI Systems", "Distributed Systems", "Backend Development", "Parallel Computing", "Graphics Programming", "Frontend Design", "Blockchain", "Quantum Cryptography", "Anything Cool"].map((interest) => (
-            <span key={interest} className={`text-sm font-mono border backdrop-blur-sm px-3 py-1 ${light ? "text-black/70 border-black/20 bg-white/30" : "text-white/70 border-white/20 bg-black/30"}`}>
-              {interest}
-            </span>
-          ))}
-        </div>
         <div className="space-y-1 mb-10">
           <p className={`text-lg ${light ? "text-black" : "text-white"}`}>Product Engineer + Community Builder</p>
           <p className={`text-lg ${light ? "text-black/60" : "text-white/60"}`}>Toronto, ON, CA</p>
