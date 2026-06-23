@@ -19,12 +19,12 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center px-8 lg:px-16 pt-14">
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
+        <div className="min-w-0">
           <p className={`font-mono text-xs tracking-widest uppercase mb-6 flex items-center gap-1.5 ${light ? "text-black/70" : "text-white/70"}`}>
             <MapPin size={12} /> Toronto, ON, CA
           </p>
-          <h1 className={`text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] mb-8 font-sans ${light ? "text-black" : "text-white"}`}>
+          <h1 className={`text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[0.95] mb-8 font-sans break-words ${light ? "text-black" : "text-white"}`}>
             eshaan kapooswalla
           </h1>
           <p className={`text-lg mb-10 ${light ? "text-black/80" : "text-white/80"}`}>
