@@ -29,7 +29,7 @@ const HeroSection = () => {
             eshaan kapooswalla
           </h1>
           <p className={`text-lg mb-10 ${light ? "text-black/80" : "text-white/80"}`}>
-            product engineer + community builder
+            engineering + community builder
           </p>
           <div className="flex gap-4">
             <a
