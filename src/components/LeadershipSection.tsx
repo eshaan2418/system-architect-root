@@ -18,7 +18,7 @@ const LeadershipSection = () => {
           <div className="flex items-start justify-between">
             <div>
               <h3 className={`text-2xl font-bold tracking-tight ${light ? "text-black" : "text-white"}`}>Founder & Captain</h3>
-              <p className={`font-medium mt-2 text-lg ${light ? "text-black/90" : "text-white/90"}`}>AWS Cloud Club at YorkU</p>
+              <p className={`font-medium mt-2 text-lg ${light ? "text-black/90" : "text-white/90"}`}>AWS Student Builder Groups (prev. Cloud Club) at YorkU</p>
             </div>
             <ExternalLink
               size={18}
